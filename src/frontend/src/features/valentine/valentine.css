@@ -1,0 +1,201 @@
+/* Valentine Experience Styles */
+.valentine-experience {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating hearts background animation */
+.floating-hearts-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-heart:nth-child(2) { left: 30%; animation-delay: 1s; }
+.floating-heart:nth-child(3) { left: 50%; animation-delay: 2s; }
+.floating-heart:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.floating-heart:nth-child(5) { left: 90%; animation-delay: 0.5s; }
+
+/* Proposal card glow */
+.proposal-card {
+  box-shadow: 0 0 40px rgba(255, 182, 193, 0.3);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proposal-card:hover {
+  box-shadow: 0 0 60px rgba(255, 182, 193, 0.5);
+}
+
+/* Character stage animations */
+.character-stage {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-image {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+}
+
+.character-begging {
+  animation: pop-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.character-sad {
+  animation: fade-in 0.8s ease-out;
+}
+
+.character-walking-off {
+  animation: slide-out-left 1.2s ease-in forwards;
+}
+
+.character-pleading {
+  animation: pop-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.character-happy-cry {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Yes button push animation */
+.yes-button-pushed {
+  animation: push-up 1s ease-out;
+}
+
+@keyframes push-up {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Celebration overlay */
+.celebration-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.falling-item {
+  position: absolute;
+  font-size: 2rem;
+  animation: fall 8s linear infinite;
+  opacity: 0.9;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 1) 0%, rgba(255, 215, 0, 0) 70%);
+  border-radius: 50%;
+  animation: sparkle-fade 2s ease-out infinite;
+}
+
+@keyframes sparkle-fade {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Message screens */
+.message-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fade-in 1.5s ease-out;
+}
+
+.message-content {
+  max-width: 600px;
+  text-align: center;
+  animation: fade-in-up 1.5s ease-out;
+}
+
+.message-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: oklch(var(--foreground));
+  text-shadow: 0 0 20px rgba(255, 182, 193, 0.3);
+  animation: fade-in-up 2s ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.long-message-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: oklch(var(--foreground));
+  text-shadow: 0 0 15px rgba(255, 182, 193, 0.2);
+  white-space: pre-wrap;
+  animation: fade-in-up 2s ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+/* Heart button */
+.heart-button {
+  position: relative;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: oklch(var(--primary));
+  animation: breathe 3s ease-in-out infinite;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.5));
+}
+
+.heart-button:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 30px rgba(255, 182, 193, 0.8));
+}
+
+.heart-button:active {
+  transform: scale(0.95);
+}
+
+/* Smooth transitions between screens */
+.screen-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.screen-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screen-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.screen-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}

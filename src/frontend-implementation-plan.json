@@ -1,0 +1,398 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine proposal single-page flow + scoped canvas particle slideshow finale",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page, mobile-first Valentine proposal story flow with slow, gentle, premium-feeling animations across all major UI changes.",
+      "acceptanceCriteria": [
+        "All step changes are animated with soft easing and subtle delays; no abrupt/jumpy content changes.",
+        "Mobile-first layout remains visually balanced on narrow screens and scales cleanly to desktop.",
+        "No threats/coercion/violence content is introduced; tone remains playful and respectful."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the React single-page shell that renders the Valentine proposal experience and ensures there are no additional routes/pages. Use shadcn-ui (e.g., Card/Button) to structure the UI with premium defaults; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "operation": "create",
+          "description": "Implement the complete multi-step story state machine and animated transitions (gentle fades, slow slide/scale, delayed reveals) so all major UI changes feel premium and emotionally paced. Use shadcn-ui components where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/valentine/motion.ts",
+          "operation": "create",
+          "description": "Add reusable animation timing/easing constants and small helpers (e.g., stagger delays, preferred durations) to enforce the global slow+gentle pacing consistently across the entire experience."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the app mounts the newly created App component cleanly and keeps the experience single-page; keep providers intact and avoid adding any authentication flows."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement Step 1 proposal screen card UI with exact text and buttons plus subtle smooth background animation.",
+      "acceptanceCriteria": [
+        "The proposal card is centered with a soft glow/shadow and premium spacing.",
+        "Background animation is subtle and continuously smooth (no flicker/jumps).",
+        "Buttons have gentle hover/press feedback and soft transitions."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "operation": "create",
+          "description": "Create Step 1 UI: centered glowing card, exact text “Will you be my Valentine? 💌”, buttons labeled exactly “Yes 💖” and “No 😶”, with gentle micro-interactions. Use shadcn-ui Card/Button for consistent visuals; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/valentine/valentine.css",
+          "operation": "create",
+          "description": "Add scoped Valentine experience styles (card glow, premium spacing, button micro-interactions) and define a subtle continuous background animation (heartbeat/floating hearts) used by Step 1 without abrupt changes."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "operation": "modify",
+          "description": "Wire Step 1 screen into the story flow and connect “Yes 💖” and “No 😶” click handlers to the state machine with gentle transition timing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement the escalating No-click sequence with guy character pop-in, sad/walk-off, then cat pleading that pushes the Yes button; remove No button on the 3rd click behavior.",
+      "acceptanceCriteria": [
+        "No-click state is tracked so behaviors differ on 1st/2nd/3rd click exactly.",
+        "The No button is fully removed (not merely disabled/hidden) at step 4.",
+        "All character animations use gentle easing and feel emotionally paced (no harsh popping)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/components/CharacterStage.tsx",
+          "operation": "create",
+          "description": "Create a character display component that can show the guy (begging/sad) and cat (pleading) assets with gentle, emotionally paced animation states (pop-in/bounce, sad transition, walk-off, pleading push)."
+        },
+        {
+          "path": "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "operation": "modify",
+          "description": "Track the exact No-click count (1st/2nd/3rd) and render the correct character beat. Ensure on the 3rd No click the “No 😶” button is removed from the DOM entirely and the cat appears to push/lift the “Yes 💖” button with a heart-melting animation."
+        },
+        {
+          "path": "frontend/src/features/valentine/valentine.css",
+          "operation": "modify",
+          "description": "Add gentle keyframes and transitions for: guy pop-in/bounce, guy sad/cry, walk-off sideways with easing, cat pleading entrance, and the Yes button nudge/push animation; keep animations slow and non-jarring."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement the Yes-click celebration with smooth magical rain (roses/flowers/hearts), sparkles/confetti glow, and cat happy-cry animation.",
+      "acceptanceCriteria": [
+        "Celebration elements animate smoothly with controlled density and soft motion.",
+        "Cat switches to happy-cry expression/animation on Yes.",
+        "No sudden flashes; effects remain premium and readable on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/components/CelebrationOverlay.tsx",
+          "operation": "create",
+          "description": "Create a controlled-density celebration overlay that animates roses 🌹, flowers 🌸, and hearts ❤️ raining from the top plus subtle sparkles/confetti/glow, ensuring motion remains smooth and magical (not chaotic)."
+        },
+        {
+          "path": "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "operation": "modify",
+          "description": "On “Yes 💖” click, trigger celebration state: show CelebrationOverlay, switch cat to happy-cry animation, and advance to the next screen with slow/gentle transition timing."
+        },
+        {
+          "path": "frontend/src/features/valentine/valentine.css",
+          "operation": "modify",
+          "description": "Add premium, subtle keyframes for falling items (soft drift, gentle opacity), sparkles/glow, and happy-cry motion; avoid flashes and keep mobile readability."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create the final love message screen with slow gentle transition and exact message text, premium typography, soft glow, and fade-in.",
+      "acceptanceCriteria": [
+        "Message text matches exactly and is readable on mobile (comfortable line length and spacing).",
+        "Screen transition and text reveal are slow/gentle with soft glow and fade-in."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+          "operation": "create",
+          "description": "Create a calm final message screen that displays the provided message EXACTLY (including casing/punctuation/line breaks) with premium typography, soft glow, and slow fade-in."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "operation": "modify",
+          "description": "Wire navigation into the Final Love Message screen after the celebration, ensuring slow/gentle transition and no abrupt content swap."
+        },
+        {
+          "path": "frontend/src/features/valentine/valentine.css",
+          "operation": "modify",
+          "description": "Add typography/layout styles for the final message (mobile-first readable line breaks, soft glow) and slow reveal animation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add an extra slide after the final love message with a bottom button that transitions to a new slide showing the long emotional message EXACTLY with premium typography and gentle fade-in.",
+      "acceptanceCriteria": [
+        "The intermediate bottom button is present and transitions are slow/gentle.",
+        "The long message content matches exactly (no edits/normalization).",
+        "Text is readable on mobile with deliberate line breaks and spacing."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+          "operation": "create",
+          "description": "Create the extra slide that displays the provided long emotional message EXACTLY as written (including quotes, spacing, and line breaks) with premium typography, soft glow, and gentle fade-in."
+        },
+        {
+          "path": "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+          "operation": "modify",
+          "description": "Add a bottom button labeled either “Next 💌” or “One more thing…” that triggers a slow/gentle transition to the LongEmotionalMessageScreen."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "operation": "modify",
+          "description": "Wire the extra slide into the story flow and ensure transitions stay slow and emotionally paced."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add a bottom-center heart-only button after the long message with breathing glow and gentle feedback; clicking transitions into the particle slideshow module.",
+      "acceptanceCriteria": [
+        "Heart button uses only a heart glyph (no extra label).",
+        "Breathing glow animation is continuous and gentle; press/hover feedback is soft.",
+        "Click transitions into particle slideshow section/module without abrupt blank screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+          "operation": "create",
+          "description": "Create a heart-only button component that renders ONLY a heart glyph (♥/💗), positioned bottom-center with clean spacing, gentle breathing glow, and soft hover/press/click feedback. Use shadcn-ui Button if appropriate while preserving the heart-only label; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+          "operation": "modify",
+          "description": "Add the bottom-center heart-only button slightly above the bottom edge; on click, trigger the transition into the particle slideshow section (mount/start) with gentle pacing and no abrupt blank state."
+        },
+        {
+          "path": "frontend/src/features/valentine/valentine.css",
+          "operation": "modify",
+          "description": "Add breathing glow keyframes and slow romantic click feedback for the heart-only button; ensure hover/press effects are subtle and premium."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Implement the Particle Slideshow Module as a self-contained, merge-friendly component that renders only inside <section id=\"particleSlideshowSection\"></section> with all CSS scoped under #particleSlideshowSection.",
+      "acceptanceCriteria": [
+        "The module mounts its canvas and any needed DOM only inside #particleSlideshowSection.",
+        "No global CSS selectors outside #particleSlideshowSection are introduced by the module.",
+        "When the module is not active, the rest of the proposal flow remains unaffected."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "operation": "create",
+          "description": "Create a self-contained React module that renders a <section id=\"particleSlideshowSection\"> and creates/manages a <canvas> inside it, with no DOM outside the section."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/particleSlideshow.css",
+          "operation": "create",
+          "description": "Add module CSS scoped strictly under #particleSlideshowSection to avoid affecting the rest of the app; include only styles needed for the section, canvas sizing, and the final bottom text."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "operation": "modify",
+          "description": "Wire the particle slideshow module into the flow so it is rendered only when activated (after the heart-only button), and ensure other screens remain unaffected when it is not active."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Add a non-hardcoded image input system for the particle slideshow that preserves user-provided order and can run with the single provided image as the final image.",
+      "acceptanceCriteria": [
+        "The slideshow uses images in the exact order specified by the user-provided list/tags.",
+        "No fixed asset paths are required for operation.",
+        "The module can run with just the single provided image as a 1-image slideshow where the last-image rule applies."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/particleSlideshow/imageSources.ts",
+          "operation": "create",
+          "description": "Implement an image source configuration approach that preserves order without hardcoded paths (support a user-editable URL array and/or ordered hidden <img> tags within #particleSlideshowSection)."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "operation": "modify",
+          "description": "Integrate the image input system: read ordered URLs and/or ordered hidden <img> elements inside #particleSlideshowSection, preserving exact order. Ensure it can run with only one image provided (including the uploaded “image 5 the last .jpg” as the final image in the sequence when used)."
+        },
+        {
+          "path": "frontend/public/assets/uploads/image-5-the-last.jpg",
+          "operation": "create",
+          "description": "Add the provided uploaded image as a static frontend asset that can be referenced by the user-configurable URL list if desired; do not hardcode this path in module logic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Ensure no blank white screen when entering particle slideshow: canvas visible immediately with scattered particles or soft loading indicator; start slideshow only after all images are loaded successfully.",
+      "acceptanceCriteria": [
+        "On module entry, a visible canvas appears immediately (no empty/white flash state).",
+        "If images are still loading, a soft loading indicator is shown and particles (or placeholder particles) are visible.",
+        "Slideshow does not begin forming the first image until preloading completes successfully."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/particleSlideshow/preload.ts",
+          "operation": "create",
+          "description": "Add image preloading utilities that report loading progress/success and only allow the slideshow to start after all images have loaded successfully."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "operation": "modify",
+          "description": "On activation, show the canvas immediately and render either scattered placeholder particles and/or a soft loading indicator while images preload; only start forming the first image once preloading succeeds."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/particleSlideshow.css",
+          "operation": "modify",
+          "description": "Add scoped styles for a soft loading indicator within #particleSlideshowSection that does not introduce any UI besides what the module requires during loading."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Implement the canvas particle animation: responsive rAF loop, DPR scaling, aspect-correct fitting, scattered→form (~3s)→hold (3s)→break (~3s) per image; last image remains permanently and becomes subtly multicolored.",
+      "acceptanceCriteria": [
+        "Particles are sampled from source image pixels (not a manual redraw) and produce the same silhouette/placement.",
+        "Timings approximate: form ~3s, hold 3s, break ~3s per image; transitions are smooth and gentle.",
+        "Canvas uses devicePixelRatio scaling and maintains image aspect ratio without distortion.",
+        "Particle count auto-adjusts based on device capability (target range ~2500–8000).",
+        "Final image remains permanently after forming and uses subtle multicolor particles."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/particleSlideshow/engine.ts",
+          "operation": "create",
+          "description": "Implement the canvas particle engine using requestAnimationFrame with responsive sizing, devicePixelRatio scaling, pixel sampling for dot targets, gentle easing for motion, and a capability-based particle count target range."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/fit.ts",
+          "operation": "create",
+          "description": "Implement aspect-ratio-correct image fitting calculations for sampling and rendering so images are never distorted."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "operation": "modify",
+          "description": "Wire the engine lifecycle: initialize canvas, start rAF loop after successful preload, sequence images with scattered→form→hold→break timing, and apply the special last-image rule (remain permanently, subtle multicolor)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "After the last image stabilizes, show exact bottom text with slow fade-in + slight upward motion; ensure slideshow background is pure white and nothing else is displayed besides canvas + bottom text.",
+      "acceptanceCriteria": [
+        "Bottom text matches exactly and appears only after the last image is stable.",
+        "Text fade-in is slow with slight upward motion and then remains fixed.",
+        "Particle slideshow view has a pure white background and no extra UI elements."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "operation": "modify",
+          "description": "After the final image stabilizes permanently, render the bottom-center text EXACTLY: “i love you deep down bottom of my heart from surya” with a slow fade-in and slight upward motion, then keep it permanently. Ensure no other UI remains visible besides canvas and this text."
+        },
+        {
+          "path": "frontend/src/features/particleSlideshow/particleSlideshow.css",
+          "operation": "modify",
+          "description": "Enforce pure white background for #particleSlideshowSection and style the bottom text animation (slow fade + slight upward motion) while keeping the rest of the screen empty aside from canvas and the bottom text."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Expose global integration functions startParticleSlideshow() and stopParticleSlideshow() to mount/start and stop/cleanup the module without leaks.",
+      "acceptanceCriteria": [
+        "startParticleSlideshow() starts preloading and then runs the slideshow when ready.",
+        "stopParticleSlideshow() halts animation, removes/clears timers/RAF, and leaves the app in a stable state.",
+        "Repeated start/stop cycles do not leak memory or stack multiple RAF loops."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/particleSlideshow/integration.ts",
+          "operation": "create",
+          "description": "Implement app-level integration that exposes window.startParticleSlideshow() and window.stopParticleSlideshow() (named exactly) to control module activation and cleanup safely across repeated cycles."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Initialize the particle slideshow integration functions at app startup and connect them to the Valentine flow activation so start/stop correctly mount/unmount module behavior without affecting other components."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Apply a coherent hand-crafted Valentine theme (pastels, modern romantic typography, soft glows, smooth micro-interactions) across the experience without blue/purple primary palette.",
+      "acceptanceCriteria": [
+        "Theme is consistent across screens (buttons, cards, text, spacing, animations).",
+        "Pastel Valentine palette is used without blue/purple as primary colors.",
+        "Overall feel is premium, romantic, cute, and not generic."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global base styles and CSS variables for a pastel Valentine palette (avoid blue/purple as primary), modern romantic typography defaults, and consistent soft glows/micro-interactions used across the experience."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens if needed to support the Valentine palette/typography and reusable glow/shadow utilities while keeping the primary palette non-blue/non-purple."
+        },
+        {
+          "path": "frontend/src/features/valentine/valentine.css",
+          "operation": "modify",
+          "description": "Ensure the Valentine experience uses consistent spacing, typography, and glow styling across all screens and maintains slow, gentle micro-interactions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Add generated static illustrated assets for guy/cat characters and use them in the No/Yes story beats with gentle animations.",
+      "acceptanceCriteria": [
+        "App uses generated character images (non-realistic) for the guy and the cat in the relevant steps.",
+        "Assets are stored as static files and referenced by the frontend (no backend image routing).",
+        "Animations applied to these assets follow the slow/gentle pacing rule."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/valentine-guy-begging.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated illustrated guy begging character asset as a static file for use in the 1st No-click beat."
+        },
+        {
+          "path": "frontend/public/assets/generated/valentine-guy-sad.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated illustrated guy sad/crying character asset as a static file for use in the 2nd No-click beat (including walk-off)."
+        },
+        {
+          "path": "frontend/public/assets/generated/valentine-cat-pleading.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated illustrated cat pleading character asset as a static file for use in the 3rd No-click beat and the Yes celebration beat."
+        },
+        {
+          "path": "frontend/src/features/valentine/components/CharacterStage.tsx",
+          "operation": "modify",
+          "description": "Reference the generated assets at frontend/public/assets/generated/valentine-guy-begging.dim_512x512.png, frontend/public/assets/generated/valentine-guy-sad.dim_512x512.png, and frontend/public/assets/generated/valentine-cat-pleading.dim_512x512.png and map them to the correct story beats with gentle animations."
+        }
+      ]
+    }
+  ]
+}

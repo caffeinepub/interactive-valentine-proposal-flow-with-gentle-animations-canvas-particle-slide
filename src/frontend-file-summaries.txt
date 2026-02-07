@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Root application component that renders the ValentineProposalExperience as a single-page experience.",
+  "frontend/src/index.css": "Global styles with custom Valentine pastel OKLCH color palette (soft rose, peach, coral), romantic typography using Playfair Display and Inter fonts, and custom animation keyframes for gentle transitions.",
+  "frontend/tailwind.config.js": "Extended Tailwind configuration with Valentine theme tokens, custom font families, glow shadows, and comprehensive animation utilities for smooth romantic interactions.",
+  "frontend/src/features/valentine/ValentineProposalExperience.tsx": "Main state machine component managing the four-step Valentine proposal flow (proposal → final message → long message → particle slideshow) with smooth transitions.",
+  "frontend/src/features/valentine/valentine.css": "Scoped CSS for Valentine experience including floating hearts background, character animations (pop-in, walk-off, pleading), celebration overlay effects, message screen typography, and heart button breathing glow.",
+  "frontend/src/features/valentine/motion.ts": "Animation timing constants and easing functions for consistent gentle pacing across all UI transitions.",
+  "frontend/src/features/valentine/screens/ProposalScreen.tsx": "Interactive proposal card with Yes/No buttons, tracks No-click count (1-3), shows character reactions, removes No button on third click, triggers celebration on Yes, and includes floating hearts background.",
+  "frontend/src/features/valentine/components/CharacterStage.tsx": "Displays character images (guy begging/sad, cat pleading/happy) based on No-click count and celebration state with gentle animations.",
+  "frontend/src/features/valentine/components/CelebrationOverlay.tsx": "Renders falling roses, flowers, hearts, and sparkles overlay with controlled density and smooth animations when Yes is clicked.",
+  "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx": "Displays the first love message exactly as specified with premium typography, soft glow, fade-in animation, and Next button to continue.",
+  "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx": "Shows the long emotional message exactly as written with readable line breaks, premium typography, and heart-only button at bottom.",
+  "frontend/src/features/valentine/components/HeartOnlyButton.tsx": "Heart-only button component with breathing glow animation and gentle hover/press feedback that triggers particle slideshow transition.",
+  "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx": "Self-contained particle slideshow component that preloads images, initializes canvas engine, shows loading indicator, and displays final text after last image stabilizes.",
+  "frontend/src/features/particleSlideshow/particleSlideshow.css": "Scoped styles for particle slideshow section including white background, loading spinner, and final bottom text with fade-in animation.",
+  "frontend/src/features/particleSlideshow/preload.ts": "Image preloading utility that loads all images before starting slideshow to prevent blank screens.",
+  "frontend/src/features/particleSlideshow/engine.ts": "Canvas particle animation engine with requestAnimationFrame loop, pixel sampling, state machine (scattering→forming→holding→breaking), device-responsive particle count, and multi-color final image.",
+  "frontend/src/features/particleSlideshow/fit.ts": "Aspect-ratio-correct image fitting calculations to prevent distortion when rendering images on canvas."
+}

@@ -1,0 +1,299 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-valentine-s-day-proposal-experience-in-the-react-frontend-that-follows-the-specified-multi-step-story-flow-and-uses-slow-gentle-premium-feeling-animations-for-all-major-ui-changes-text-reveals-transitions-button-interactions-character-appearances-emotional-reactions-celebration-effects",
+      "featureTitle": "Create a single-page Valentine’s Day proposal experience in the React frontend that follows the specified multi-step story flow and uses slow, gentle, premium-feeling animations for all major UI changes (text reveals, transitions, button interactions, character appearances, emotional reactions, celebration effects).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+        "frontend/src/features/valentine/motion.ts",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-step-1-proposal-screen-ui-centered-card-with-a-glowing-soft-shadow-exact-text-will-you-be-my-valentine-two-buttons-labeled-exactly-yes-and-no-and-a-subtle-background-animation-heartbeat-and-or-floating-hearts-that-does-not-distract-and-never-feels-abrupt",
+      "featureTitle": "Implement Step 1 (Proposal Screen) UI: centered card with a glowing soft shadow; exact text “Will you be my Valentine? 💌”; two buttons labeled exactly “Yes 💖” and “No 😶”; and a subtle background animation (heartbeat and/or floating hearts) that does not distract and never feels abrupt.",
+      "files": [
+        "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+        "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+        "frontend/src/features/valentine/valentine.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-escalating-no-click-sequence-exactly-on-1st-no-click-show-a-funny-illustrated-emoji-style-guy-character-with-a-dramatic-cute-begging-expression-using-gentle-pop-in-bounce-on-2nd-no-click-update-the-guy-to-sad-crying-then-he-turns-and-slowly-walks-off-screen-sideways-using-easing-on-3rd-no-click-remove-the-no-button-completely-show-an-emotional-crying-cat-character-that-gently-pushes-lifts-the-yes-button-toward-the-user-with-a-heart-melting-pleading-animation",
+      "featureTitle": "Implement the escalating “No” click sequence exactly: on 1st No click show a funny illustrated/emoji-style guy character with a dramatic cute begging expression using gentle pop-in/bounce; on 2nd No click update the guy to sad/crying, then he turns and slowly walks off-screen sideways using easing; on 3rd No click remove the No button completely, show an emotional crying cat character that gently pushes/lifts the Yes button toward the user with a heart-melting pleading animation.",
+      "files": [
+        "frontend/src/features/valentine/components/CharacterStage.tsx",
+        "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+        "frontend/src/features/valentine/valentine.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-yes-click-celebration-step-5-roses-flowers-and-hearts-rain-smoothly-from-the-top-add-celebratory-glow-and-sparkles-confetti-effects-that-feel-magical-not-chaotic-and-animate-the-cat-to-cry-happily-expressing-joy",
+      "featureTitle": "Implement the “Yes” click celebration (Step 5): roses 🌹, flowers 🌸, and hearts ❤️ rain smoothly from the top; add celebratory glow and sparkles/confetti effects that feel magical (not chaotic); and animate the cat to cry happily expressing joy.",
+      "files": [
+        "frontend/src/features/valentine/components/CelebrationOverlay.tsx",
+        "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+        "frontend/src/features/valentine/valentine.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-the-final-love-message-screen-with-a-slow-gentle-transition-into-a-clean-calm-layout-and-display-the-following-message-exactly-including-casing-punctuation-and-line-breaks-as-shown-using-premium-typography-soft-glow-and-fade-in-thank-you-thank-you-my-love-for-accepting-me-as-your-valentine-i-am-crying-with-happiness-because-of-you-my-sweet-pisasu-with-all-my-love-i-will-make-you-forget-the-worst-things-happened-to-you-till-now-my-dear-vincy",
+      "featureTitle": "Create the Final Love Message Screen with a slow, gentle transition into a clean calm layout and display the following message EXACTLY (including casing, punctuation, and line breaks as shown), using premium typography, soft glow, and fade-in:\n\nthank you... thank you my love for accepting me as your valentine..\ni am crying with happiness because of you my sweet pisasu 😭....\nwith all my love i will make you forget the worst things happened to you till now\nmy dear vincy",
+      "files": [
+        "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+        "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+        "frontend/src/features/valentine/valentine.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-extra-slide-after-the-final-love-message-include-a-bottom-button-label-can-be-next-or-one-more-thing-and-on-click-transition-slowly-gently-to-a-new-slide-that-displays-the-provided-long-emotional-message-exactly-as-written-including-quotes-repeated-passages-spacing-and-line-breaks-ensure-premium-typography-readable-line-breaks-on-mobile-soft-glow-and-fade-in",
+      "featureTitle": "Add an extra slide after the final love message: include a bottom button (label can be “Next 💌” or “One more thing…”), and on click transition slowly/gently to a new slide that displays the provided long emotional message EXACTLY as written (including quotes, repeated passages, spacing, and line breaks). Ensure premium typography, readable line breaks on mobile, soft glow, and fade-in.",
+      "files": [
+        "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+        "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+        "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-after-the-long-emotional-message-slide-add-a-bottom-center-heart-only-button-only-a-heart-symbol-like-positioned-slightly-above-the-bottom-edge-with-clean-spacing-the-heart-button-must-have-a-gentle-breathing-glow-soft-hover-press-animation-and-slow-romantic-click-feedback-clicking-it-must-trigger-the-particle-slideshow-module-transition",
+      "featureTitle": "After the long emotional message slide, add a bottom-center heart-only button (ONLY a heart symbol like ♥/💗), positioned slightly above the bottom edge with clean spacing. The heart button must have a gentle breathing glow, soft hover/press animation, and slow romantic click feedback; clicking it must trigger the Particle Slideshow Module transition.",
+      "files": [
+        "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+        "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+        "frontend/src/features/valentine/valentine.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-particle-slideshow-module-as-a-self-contained-merge-friendly-component-that-renders-only-inside-section-id-particleslideshowsection-section-creates-a-canvas-within-that-section-and-scopes-all-styling-under-particleslideshowsection-so-it-does-not-affect-the-rest-of-the-app",
+      "featureTitle": "Implement the Particle Slideshow Module as a self-contained, merge-friendly component that renders ONLY inside <section id=\"particleSlideshowSection\"></section>, creates a <canvas> within that section, and scopes all styling under #particleSlideshowSection so it does not affect the rest of the app.",
+      "files": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+        "frontend/src/features/particleSlideshow/particleSlideshow.css",
+        "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-image-input-system-for-the-particle-slideshow-that-does-not-hardcode-file-paths-and-preserves-the-exact-order-the-user-provides-images-support-either-or-both-a-an-ordered-set-of-hidden-img-tags-inside-particleslideshowsection-that-the-user-can-attach-uploaded-images-to-in-order-and-or-b-a-single-array-of-image-urls-that-can-be-pasted-in-ensure-the-current-uploaded-image-image-5-the-last-jpg-can-be-used-as-the-final-image-in-the-sequence",
+      "featureTitle": "Add an image input system for the particle slideshow that does NOT hardcode file paths and preserves the exact order the user provides images. Support either (or both): (a) an ordered set of hidden <img> tags inside #particleSlideshowSection that the user can attach uploaded images to in order, and/or (b) a single array of image URLs that can be pasted in. Ensure the current uploaded image “image 5 the last .jpg” can be used as the final image in the sequence.",
+      "files": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enforce-the-no-blank-white-screen-rule-for-entering-the-particle-slideshow-when-the-heart-button-triggers-the-module-the-canvas-must-be-visible-immediately-and-either-shows-scattered-particles-instantly-or-displays-a-soft-loading-indicator-until-all-images-are-fully-preloaded-start-the-slideshow-animation-only-after-all-images-are-loaded-successfully",
+      "featureTitle": "Enforce the “NO BLANK WHITE SCREEN” rule for entering the particle slideshow: when the heart button triggers the module, the canvas must be visible immediately and either shows scattered particles instantly or displays a soft loading indicator until all images are fully preloaded. Start the slideshow animation ONLY after all images are loaded successfully.",
+      "files": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+        "frontend/src/features/particleSlideshow/particleSlideshow.css",
+        "frontend/src/features/particleSlideshow/preload.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-particle-animation-requirements-using-canvas-requestanimationframe-with-responsive-sizing-devicepixelratio-scaling-and-aspect-ratio-correct-image-fitting-no-distortion-for-each-image-particles-start-scattered-randomly-form-into-an-identical-dot-mosaic-sampled-from-image-pixels-over-3s-hold-for-3s-break-apart-over-3s-then-proceed-to-next-image-for-the-last-image-after-forming-it-remains-permanently-no-further-transitions-particles-become-subtly-multi-colored-and-then-the-bottom-text-appears",
+      "featureTitle": "Implement the particle animation requirements using <canvas> + requestAnimationFrame with responsive sizing, devicePixelRatio scaling, and aspect-ratio-correct image fitting (no distortion). For each image: particles start scattered randomly, form into an identical dot mosaic sampled from image pixels over ~3s, hold for 3s, break apart over ~3s, then proceed to next image. For the LAST image: after forming it remains permanently (no further transitions), particles become subtly multi-colored, and then the bottom text appears.",
+      "files": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+        "frontend/src/features/particleSlideshow/engine.ts",
+        "frontend/src/features/particleSlideshow/fit.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-after-the-final-image-stabilizes-permanently-show-the-bottom-center-text-exactly-i-love-you-deep-down-bottom-of-my-heart-from-surya-the-text-must-fade-in-slowly-with-a-slight-upward-motion-and-remain-permanently-ensure-the-particle-slideshow-screen-background-is-pure-white-and-displays-nothing-else-besides-the-canvas-and-this-bottom-text",
+      "featureTitle": "After the final image stabilizes permanently, show the bottom-center text EXACTLY: “i love you deep down bottom of my heart from surya”. The text must fade in slowly with a slight upward motion and remain permanently. Ensure the particle slideshow screen background is pure white and displays nothing else besides the canvas and this bottom text.",
+      "files": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+        "frontend/src/features/particleSlideshow/particleSlideshow.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-expose-two-integration-functions-for-the-particle-slideshow-module-on-the-global-window-or-an-equivalent-app-level-integration-point-named-exactly-startparticleslideshow-and-stopparticleslideshow-startparticleslideshow-mounts-starts-the-module-stopparticleslideshow-stops-animation-and-cleans-up-requestanimationframe-and-listeners-without-affecting-other-pages-components",
+      "featureTitle": "Expose two integration functions for the particle slideshow module on the global window (or an equivalent app-level integration point) named exactly: startParticleSlideshow() and stopParticleSlideshow(). startParticleSlideshow() mounts/starts the module; stopParticleSlideshow() stops animation and cleans up requestAnimationFrame and listeners without affecting other pages/components.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-hand-crafted-valentine-visual-theme-pastel-palette-modern-romantic-typography-soft-glows-smooth-micro-interactions-consistently-across-the-entire-experience-do-not-use-a-blue-purple-primary-palette",
+      "featureTitle": "Apply a coherent, hand-crafted Valentine visual theme (pastel palette, modern romantic typography, soft glows, smooth micro-interactions) consistently across the entire experience. Do not use a blue/purple primary palette.",
+      "files": [
+        "frontend/src/features/valentine/valentine.css",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-static-illustration-assets-for-the-guy-and-cat-characters-illustrated-emoji-like-non-realistic-and-use-them-in-the-no-yes-story-beats-as-visual-elements-with-gentle-animations-to-reinforce-the-hand-crafted-feel",
+      "featureTitle": "Add generated static illustration assets for the guy and cat characters (illustrated/emoji-like, non-realistic) and use them in the No/Yes story beats as visual elements (with gentle animations) to reinforce the hand-crafted feel.",
+      "files": [
+        "frontend/src/features/valentine/components/CharacterStage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

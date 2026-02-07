@@ -1,0 +1,352 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T10:47:39.732Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 15,
+    "implemented": 15,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create a single-page Valentine’s Day proposal experience in the React frontend that follows the specified multi-step story flow and uses slow, gentle, premium-feeling animations for all major UI changes (text reveals, transitions, button interactions, character appearances, emotional reactions, celebration effects).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "frontend/src/features/valentine/motion.ts",
+          "frontend/src/main.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "frontend/src/features/valentine/motion.ts",
+          "frontend/src/main.tsx"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Enforce the “NO BLANK WHITE SCREEN” rule for entering the particle slideshow: when the heart button triggers the module, the canvas must be visible immediately and either shows scattered particles instantly or displays a soft loading indicator until all images are fully preloaded. Start the slideshow animation ONLY after all images are loaded successfully.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/particleSlideshow/preload.ts",
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/src/features/particleSlideshow/particleSlideshow.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/particleSlideshow/preload.ts",
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/src/features/particleSlideshow/particleSlideshow.css"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Implement the particle animation requirements using <canvas> + requestAnimationFrame with responsive sizing, devicePixelRatio scaling, and aspect-ratio-correct image fitting (no distortion). For each image: particles start scattered randomly, form into an identical dot mosaic sampled from image pixels over ~3s, hold for 3s, break apart over ~3s, then proceed to next image. For the LAST image: after forming it remains permanently (no further transitions), particles become subtly multi-colored, and then the bottom text appears.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/particleSlideshow/engine.ts",
+          "frontend/src/features/particleSlideshow/fit.ts",
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/particleSlideshow/engine.ts",
+          "frontend/src/features/particleSlideshow/fit.ts",
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "After the final image stabilizes permanently, show the bottom-center text EXACTLY: “i love you deep down bottom of my heart from surya”. The text must fade in slowly with a slight upward motion and remain permanently. Ensure the particle slideshow screen background is pure white and displays nothing else besides the canvas and this bottom text.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/src/features/particleSlideshow/particleSlideshow.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/src/features/particleSlideshow/particleSlideshow.css"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Expose two integration functions for the particle slideshow module on the global window (or an equivalent app-level integration point) named exactly: startParticleSlideshow() and stopParticleSlideshow(). startParticleSlideshow() mounts/starts the module; stopParticleSlideshow() stops animation and cleans up requestAnimationFrame and listeners without affecting other pages/components.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/particleSlideshow/integration.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Apply a coherent, hand-crafted Valentine visual theme (pastel palette, modern romantic typography, soft glows, smooth micro-interactions) consistently across the entire experience. Do not use a blue/purple primary palette.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/features/valentine/valentine.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/features/valentine/valentine.css"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Add generated static illustration assets for the guy and cat characters (illustrated/emoji-like, non-realistic) and use them in the No/Yes story beats as visual elements (with gentle animations) to reinforce the hand-crafted feel.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/valentine-guy-begging.dim_512x512.png",
+          "frontend/public/assets/generated/valentine-guy-sad.dim_512x512.png",
+          "frontend/public/assets/generated/valentine-cat-pleading.dim_512x512.png",
+          "frontend/src/features/valentine/components/CharacterStage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/valentine-guy-begging.dim_512x512.png",
+          "frontend/public/assets/generated/valentine-guy-sad.dim_512x512.png",
+          "frontend/public/assets/generated/valentine-cat-pleading.dim_512x512.png",
+          "frontend/src/features/valentine/components/CharacterStage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Implement Step 1 (Proposal Screen) UI: centered card with a glowing soft shadow; exact text “Will you be my Valentine? 💌”; two buttons labeled exactly “Yes 💖” and “No 😶”; and a subtle background animation (heartbeat and/or floating hearts) that does not distract and never feels abrupt.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "frontend/src/features/valentine/valentine.css",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "frontend/src/features/valentine/valentine.css",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Implement the escalating “No” click sequence exactly: on 1st No click show a funny illustrated/emoji-style guy character with a dramatic cute begging expression using gentle pop-in/bounce; on 2nd No click update the guy to sad/crying, then he turns and slowly walks off-screen sideways using easing; on 3rd No click remove the No button completely, show an emotional crying cat character that gently pushes/lifts the Yes button toward the user with a heart-melting pleading animation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/valentine/components/CharacterStage.tsx",
+          "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/valentine/components/CharacterStage.tsx",
+          "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Implement the “Yes” click celebration (Step 5): roses 🌹, flowers 🌸, and hearts ❤️ rain smoothly from the top; add celebratory glow and sparkles/confetti effects that feel magical (not chaotic); and animate the cat to cry happily expressing joy.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/valentine/components/CelebrationOverlay.tsx",
+          "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/valentine/components/CelebrationOverlay.tsx",
+          "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Create the Final Love Message Screen with a slow, gentle transition into a clean calm layout and display the following message EXACTLY (including casing, punctuation, and line breaks as shown), using premium typography, soft glow, and fade-in:\n\nthank you... thank you my love for accepting me as your valentine..\ni am crying with happiness because of you my sweet pisasu 😭....\nwith all my love i will make you forget the worst things happened to you till now\nmy dear vincy",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Add an extra slide after the final love message: include a bottom button (label can be “Next 💌” or “One more thing…”), and on click transition slowly/gently to a new slide that displays the provided long emotional message EXACTLY as written (including quotes, repeated passages, spacing, and line breaks). Ensure premium typography, readable line breaks on mobile, soft glow, and fade-in.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+          "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+          "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "After the long emotional message slide, add a bottom-center heart-only button (ONLY a heart symbol like ♥/💗), positioned slightly above the bottom edge with clean spacing. The heart button must have a gentle breathing glow, soft hover/press animation, and slow romantic click feedback; clicking it must trigger the Particle Slideshow Module transition.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+          "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+          "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+          "frontend/src/features/valentine/valentine.css"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Implement the Particle Slideshow Module as a self-contained, merge-friendly component that renders ONLY inside <section id=\"particleSlideshowSection\"></section>, creates a <canvas> within that section, and scopes all styling under #particleSlideshowSection so it does not affect the rest of the app.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/src/features/particleSlideshow/particleSlideshow.css",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/src/features/particleSlideshow/particleSlideshow.css",
+          "frontend/src/features/valentine/ValentineProposalExperience.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Add an image input system for the particle slideshow that does NOT hardcode file paths and preserves the exact order the user provides images. Support either (or both): (a) an ordered set of hidden <img> tags inside #particleSlideshowSection that the user can attach uploaded images to in order, and/or (b) a single array of image URLs that can be pasted in. Ensure the current uploaded image “image 5 the last .jpg” can be used as the final image in the sequence.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/features/particleSlideshow/imageSources.ts",
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+          "frontend/public/assets/uploads/image-5-the-last.jpg"
+        ],
+        "matchedFiles": [
+          "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/valentine-cat-pleading.dim_512x512.png",
+    "frontend/public/assets/generated/valentine-guy-begging.dim_512x512.png",
+    "frontend/public/assets/generated/valentine-guy-sad.dim_512x512.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+    "frontend/src/features/particleSlideshow/engine.ts",
+    "frontend/src/features/particleSlideshow/fit.ts",
+    "frontend/src/features/particleSlideshow/particleSlideshow.css",
+    "frontend/src/features/particleSlideshow/preload.ts",
+    "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+    "frontend/src/features/valentine/components/CelebrationOverlay.tsx",
+    "frontend/src/features/valentine/components/CharacterStage.tsx",
+    "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+    "frontend/src/features/valentine/motion.ts",
+    "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+    "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+    "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+    "frontend/src/features/valentine/valentine.css",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

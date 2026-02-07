@@ -1,0 +1,121 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T10:47:39.728Z",
+  "summary": "Diff adds a new Valentine proposal flow and a canvas-based particle slideshow module, but several BuildRequest requirements are missing or violated (notably image input without hardcoded paths, global start/stop integration functions, heart-button positioning, and non-goals like Internet Identity/auth + backend).",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Display the provided long emotional message EXACTLY as written (including quotes, repeated passages, spacing, and line breaks).",
+      "reason": "The diff includes a hardcoded long message string, but the BuildRequest’s exact long message content is not present in the diff summary, so exact-match compliance cannot be verified from the provided evidence.",
+      "evidence": [
+        "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Heart-only button must be bottom-center, slightly above the bottom edge, with breathing glow and click feedback, and triggers particle slideshow transition.",
+      "reason": "Button is rendered in normal document flow with margins (`mt-16 mb-8`) rather than being positioned bottom-center slightly above the bottom edge. While it is heart-only and has a breathing animation class, the required positioning is not implemented as specified.",
+      "evidence": [
+        "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+        "frontend/src/features/valentine/valentine.css (truncated)",
+        "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "requirement": "Particle slideshow image input system must NOT hardcode file paths; must preserve user-provided image order; support hidden ordered <img> tags and/or a pasted URL array; must be able to use uploaded “image 5 the last .jpg” as final image.",
+      "reason": "The module hardcodes `const imageUrls = ['/assets/uploads/image-5-the-last.jpg'];` and provides no user-driven ordered input mechanism (no hidden ordered <img> tags in #particleSlideshowSection, no editable URL list).",
+      "evidence": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "NO BLANK WHITE SCREEN rule: canvas visible immediately and either shows scattered particles instantly or shows a soft loading indicator until all images preload; slideshow starts only after preload completes.",
+      "reason": "While a canvas and loading indicator are rendered immediately, the diff does not show any placeholder/scattered particles being drawn during loading; the engine is only created after preload completes, implying the canvas may remain blank behind the spinner. This does not clearly satisfy the “either scattered particles instantly OR loading indicator until preloaded” requirement’s particle/placeholder aspect from the provided evidence.",
+      "evidence": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Particle animation sequence and final-image behavior: scatter→form (~3s)→hold (3s)→break (~3s) per image; last image remains permanently and becomes subtly multicolored after forming; responsive DPR scaling; aspect-correct fitting; particle count auto-adjust 2500–8000.",
+      "reason": "The engine implementation is truncated; the provided portion shows pixel sampling and particle count selection, but does not provide complete evidence for the required timings, state progression, last-image permanent stop, or subtle multicolor behavior.",
+      "evidence": [
+        "frontend/src/features/particleSlideshow/engine.ts (truncated)",
+        "frontend/src/features/particleSlideshow/fit.ts"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Expose global integration functions startParticleSlideshow() and stopParticleSlideshow() to mount/start and stop/cleanup the module without leaks.",
+      "reason": "No global `window.startParticleSlideshow` / `window.stopParticleSlideshow` (or equivalent app-level integration) is shown. The slideshow is only activated via internal React state (`currentStep === 'particleShow'`).",
+      "evidence": [
+        "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added backend canister file even though backend is not required for this feature set.",
+      "reason": "BuildRequest explicitly states backend is not required and should be implemented entirely in the React frontend.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Internet Identity authentication provider/hooks and actor/query plumbing added to the app.",
+      "reason": "BuildRequest lists Internet Identity authentication/user accounts as a non-goal; diff wraps the app in `InternetIdentityProvider` and includes `useInternetIdentity`/`useActor` logic.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts (truncated)",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Particle slideshow uses a hardcoded image path to an uploaded asset.",
+      "reason": "BuildRequest requires the image input system to NOT hardcode file paths and to use user-provided ordering; the diff hardcodes `'/assets/uploads/image-5-the-last.jpg'`.",
+      "evidence": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+      ]
+    },
+    {
+      "description": "Particle slideshow loading indicator text \"Loading your special moment...\" added.",
+      "reason": "BuildRequest did not request custom loading copy; additionally, constraints require user-specified messages be displayed exactly as provided (this is extra, non-requested copy).",
+      "evidence": [
+        "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/features/particleSlideshow/ParticleSlideshowModule.tsx",
+    "frontend/src/features/particleSlideshow/engine.ts",
+    "frontend/src/features/particleSlideshow/fit.ts",
+    "frontend/src/features/particleSlideshow/particleSlideshow.css",
+    "frontend/src/features/particleSlideshow/preload.ts",
+    "frontend/src/features/valentine/ValentineProposalExperience.tsx",
+    "frontend/src/features/valentine/components/CelebrationOverlay.tsx",
+    "frontend/src/features/valentine/components/CharacterStage.tsx",
+    "frontend/src/features/valentine/components/HeartOnlyButton.tsx",
+    "frontend/src/features/valentine/motion.ts",
+    "frontend/src/features/valentine/screens/FinalLoveMessageScreen.tsx",
+    "frontend/src/features/valentine/screens/LongEmotionalMessageScreen.tsx",
+    "frontend/src/features/valentine/screens/ProposalScreen.tsx",
+    "frontend/src/features/valentine/valentine.css",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

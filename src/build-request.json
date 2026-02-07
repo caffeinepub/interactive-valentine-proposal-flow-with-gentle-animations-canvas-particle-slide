@@ -1,0 +1,325 @@
+{
+  "kind": "build_request",
+  "title": "Interactive Valentine proposal flow with gentle animations + canvas particle slideshow module",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page Valentine’s Day proposal experience in the React frontend that follows the specified multi-step story flow and uses slow, gentle, premium-feeling animations for all major UI changes (text reveals, transitions, button interactions, character appearances, emotional reactions, celebration effects).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🔹 GLOBAL ANIMATION RULE (MOST IMPORTANT)\nSlow + Gentle Decision-Making",
+          "🔹 Interactive Story Flow (Must Follow Exactly)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All step changes are animated with soft easing and subtle delays; no abrupt/jumpy content changes.",
+        "Mobile-first layout remains visually balanced on narrow screens and scales cleanly to desktop.",
+        "No threats/coercion/violence content is introduced; tone remains playful and respectful."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement Step 1 (Proposal Screen) UI: centered card with a glowing soft shadow; exact text “Will you be my Valentine? 💌”; two buttons labeled exactly “Yes 💖” and “No 😶”; and a subtle background animation (heartbeat and/or floating hearts) that does not distract and never feels abrupt.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Step 1 – Proposal Screen\n\nCentered card with glowing soft shadow.\n\nText: “Will you be my Valentine? 💌”\n\nTwo buttons: Yes 💖 and No 😶\n\nSubtle heartbeat or floating-heart animation in the background."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The proposal card is centered with a soft glow/shadow and premium spacing.",
+        "Background animation is subtle and continuously smooth (no flicker/jumps).",
+        "Buttons have gentle hover/press feedback and soft transitions."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement the escalating “No” click sequence exactly: on 1st No click show a funny illustrated/emoji-style guy character with a dramatic cute begging expression using gentle pop-in/bounce; on 2nd No click update the guy to sad/crying, then he turns and slowly walks off-screen sideways using easing; on 3rd No click remove the No button completely, show an emotional crying cat character that gently pushes/lifts the Yes button toward the user with a heart-melting pleading animation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Step 2 – First “No” Click\nIf “No” is clicked:\nA funny random guy character appears with a dramatic but cute begging expression.",
+          "Step 3 – Second “No” Click\nThe guy becomes visibly sad.\nHe cries, turns around, and slowly walks off the screen sideways.",
+          "Step 4 – Third “No” Click\nThe No button disappears completely.\nAn emotional cat character appears.\nThe cat has tears in its eyes and gently lifts or pushes the “Yes” button toward the user."
+        ]
+      },
+      "acceptanceCriteria": [
+        "No-click state is tracked so behaviors differ on 1st/2nd/3rd click exactly.",
+        "The No button is fully removed (not merely disabled/hidden) at step 4.",
+        "All character animations use gentle easing and feel emotionally paced (no harsh popping)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement the “Yes” click celebration (Step 5): roses 🌹, flowers 🌸, and hearts ❤️ rain smoothly from the top; add celebratory glow and sparkles/confetti effects that feel magical (not chaotic); and animate the cat to cry happily expressing joy.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Step 5 – “Yes” Click Celebration\nWhen “Yes” is clicked:\nRoses 🌹, flowers 🌸, and hearts ❤️ rain down from the top of the screen.\nThe cat starts crying happily, expressing joy.\nAdd celebratory glow, sparkles, or confetti effects.\nCelebration must feel smooth and magical, not chaotic."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Celebration elements animate smoothly with controlled density and soft motion.",
+        "Cat switches to happy-cry expression/animation on Yes.",
+        "No sudden flashes; effects remain premium and readable on mobile."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create the Final Love Message Screen with a slow, gentle transition into a clean calm layout and display the following message EXACTLY (including casing, punctuation, and line breaks as shown), using premium typography, soft glow, and fade-in:\n\nthank you... thank you my love for accepting me as your valentine..\ni am crying with happiness because of you my sweet pisasu 😭....\nwith all my love i will make you forget the worst things happened to you till now\nmy dear vincy",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Message (must be shown exactly):\n\nthank you... thank you my love for accepting me as your valentine..\ni am crying with happiness because of you my sweet pisasu 😭....\nwith all my love i will make you forget the worst things happened to you till now\nmy dear vincy"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Message text matches exactly and is readable on mobile (comfortable line length and spacing).",
+        "Screen transition and text reveal are slow/gentle with soft glow and fade-in."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add an extra slide after the final love message: include a bottom button (label can be “Next 💌” or “One more thing…”), and on click transition slowly/gently to a new slide that displays the provided long emotional message EXACTLY as written (including quotes, repeated passages, spacing, and line breaks). Ensure premium typography, readable line breaks on mobile, soft glow, and fade-in.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🔹 EXTRA SLIDE AFTER FINAL LOVE MESSAGE\nAfter the final love message screen:\nThere must be a button at the bottom (example: “Next 💌” / “One more thing…”).\nWhen clicked, it transitions smoothly into a new final slide.\nThis new slide displays the following long emotional message with:\npremium typography\nreadable line breaks\nsoft glow\nfade-in animation\nmobile-first layout",
+          "Message for the next slide (must be shown exactly as written):\n\n\"sometimes i would be very nervous ...\n\nfrom your idiot \nsurya\n\n...\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "The intermediate bottom button is present and transitions are slow/gentle.",
+        "The long message content matches exactly (no edits/normalization).",
+        "Text is readable on mobile with deliberate line breaks and spacing."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "After the long emotional message slide, add a bottom-center heart-only button (ONLY a heart symbol like ♥/💗), positioned slightly above the bottom edge with clean spacing. The heart button must have a gentle breathing glow, soft hover/press animation, and slow romantic click feedback; clicking it must trigger the Particle Slideshow Module transition.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🔹 HEART BUTTON AFTER THE ABOVE MESSAGE\nThere must be a button at the bottom center.\nThe button must have ONLY a heart symbol (example: ♥ or 💗).\nThe heart button should have:\ngentle breathing glow\nsoft hover/press animation\nslow + romantic click feedback\nWhen this heart button is pressed, it must trigger the next module exactly as described below."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Heart button uses only a heart glyph (no extra label).",
+        "Breathing glow animation is continuous and gentle; press/hover feedback is soft.",
+        "Click transitions into particle slideshow section/module without abrupt blank screen."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Implement the Particle Slideshow Module as a self-contained, merge-friendly component that renders ONLY inside <section id=\"particleSlideshowSection\"></section>, creates a <canvas> within that section, and scopes all styling under #particleSlideshowSection so it does not affect the rest of the app.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Generate ONLY a self-contained “Particle Slideshow Module”",
+          "This module must run inside a container div like:\n<section id=\"particleSlideshowSection\"></section>\n\nSo the module must:\ncreate canvas inside that section\nnot affect other parts of the website\nnot overwrite global styles\nall CSS must be scoped under #particleSlideshowSection"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The module mounts its canvas and any needed DOM only inside #particleSlideshowSection.",
+        "No global CSS selectors outside #particleSlideshowSection are introduced by the module.",
+        "When the module is not active, the rest of the proposal flow remains unaffected."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add an image input system for the particle slideshow that does NOT hardcode file paths and preserves the exact order the user provides images. Support either (or both): (a) an ordered set of hidden <img> tags inside #particleSlideshowSection that the user can attach uploaded images to in order, and/or (b) a single array of image URLs that can be pasted in. Ensure the current uploaded image “image 5 the last .jpg” can be used as the final image in the sequence.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "⚠️ Do NOT hardcode image file paths.\nInstead, create an easy system like:\n\nan array of image URLs that I can paste in, OR\n\na set of <img> tags inside the HTML where I can attach the uploaded images in order.",
+          "The user has uploaded 1 image(s): image 5 the last .jpg."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The slideshow uses images in the exact order specified by the user-provided list/tags.",
+        "No fixed asset paths are required for operation.",
+        "The module can run with just the single provided image as a 1-image slideshow where the last-image rule applies."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Enforce the “NO BLANK WHITE SCREEN” rule for entering the particle slideshow: when the heart button triggers the module, the canvas must be visible immediately and either shows scattered particles instantly or displays a soft loading indicator until all images are fully preloaded. Start the slideshow animation ONLY after all images are loaded successfully.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "IMPORTANT FIX (NO BLANK WHITE SCREEN RULE)\nWhen the heart button is clicked, the particle slideshow section must never show a blank white screen.\nThe canvas must be visible immediately.\nIt must either:\nshow scattered particles instantly, OR\nshow a soft loading indicator until images are fully preloaded.\nThe slideshow must start ONLY after all images are loaded successfully."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On module entry, a visible canvas appears immediately (no empty/white flash state).",
+        "If images are still loading, a soft loading indicator is shown and particles (or placeholder particles) are visible.",
+        "Slideshow does not begin forming the first image until preloading completes successfully."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Implement the particle animation requirements using <canvas> + requestAnimationFrame with responsive sizing, devicePixelRatio scaling, and aspect-ratio-correct image fitting (no distortion). For each image: particles start scattered randomly, form into an identical dot mosaic sampled from image pixels over ~3s, hold for 3s, break apart over ~3s, then proceed to next image. For the LAST image: after forming it remains permanently (no further transitions), particles become subtly multi-colored, and then the bottom text appears.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🌀 Particle Animation Requirements (MOST IMPORTANT)\nEach image must:\nbe recreated as a dot/particle mosaic\nlook 100% identical in shape and placement\nNOT be an artistic redraw\ndots must be sampled from the image pixels",
+          "Flow for each image:\ndots start scattered randomly\ndots smoothly move into position to form the image\nonce formed, hold for 3 seconds\ndots smoothly break apart back into random\nrepeat for next image",
+          "Final image special rule:\nWhen the LAST image forms, it must remain permanently (no more transitions)\nDots become multi-colored (premium, subtle)\nAfter it stabilizes, show a bottom text message"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Particles are sampled from source image pixels (not a manual redraw) and produce the same silhouette/placement.",
+        "Timings approximate: form ~3s, hold 3s, break ~3s per image; transitions are smooth and gentle.",
+        "Canvas uses devicePixelRatio scaling and maintains image aspect ratio without distortion.",
+        "Particle count auto-adjusts based on device capability (target range ~2500–8000).",
+        "Final image remains permanently after forming and uses subtle multicolor particles."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "After the final image stabilizes permanently, show the bottom-center text EXACTLY: “i love you deep down bottom of my heart from surya”. The text must fade in slowly with a slight upward motion and remain permanently. Ensure the particle slideshow screen background is pure white and displays nothing else besides the canvas and this bottom text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "📝 Final text (bottom)\nAfter the final image is stable, show this text at the bottom center:\n\n“i love you deep down bottom of my heart from surya”\n\nText behavior:\nfade-in slowly\nslight upward motion\nstays permanently",
+          "⚪ Background / UI\nbackground must be pure white\nnothing else on screen except:\n\nthe particle canvas image\nthe bottom text"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Bottom text matches exactly and appears only after the last image is stable.",
+        "Text fade-in is slow with slight upward motion and then remains fixed.",
+        "Particle slideshow view has a pure white background and no extra UI elements."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Expose two integration functions for the particle slideshow module on the global window (or an equivalent app-level integration point) named exactly: startParticleSlideshow() and stopParticleSlideshow(). startParticleSlideshow() mounts/starts the module; stopParticleSlideshow() stops animation and cleans up requestAnimationFrame and listeners without affecting other pages/components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Code should expose 2 functions for integration:\nRequired integration functions:\n\nstartParticleSlideshow()\nstopParticleSlideshow()"
+        ]
+      },
+      "acceptanceCriteria": [
+        "startParticleSlideshow() starts preloading and then runs the slideshow when ready.",
+        "stopParticleSlideshow() halts animation, removes/clears timers/RAF, and leaves the app in a stable state.",
+        "Repeated start/stop cycles do not leak memory or stack multiple RAF loops."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Apply a coherent, hand-crafted Valentine visual theme (pastel palette, modern romantic typography, soft glows, smooth micro-interactions) consistently across the entire experience. Do not use a blue/purple primary palette.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The website must feel hand-crafted, not generic.",
+          "Use soft pastel Valentine colors, smooth easing animations, and modern typography."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Theme is consistent across screens (buttons, cards, text, spacing, animations).",
+        "Pastel Valentine palette is used without blue/purple as primary colors.",
+        "Overall feel is premium, romantic, cute, and not generic."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Add generated static illustration assets for the guy and cat characters (illustrated/emoji-like, non-realistic) and use them in the No/Yes story beats as visual elements (with gentle animations) to reinforce the hand-crafted feel.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Use emoji or illustrated-style animation (no realism).",
+          "The website must feel hand-crafted, not generic."
+        ]
+      },
+      "acceptanceCriteria": [
+        "App uses generated character images (non-realistic) for the guy and the cat in the relevant steps.",
+        "Assets are stored as static files and referenced by the frontend (no backend image routing).",
+        "Animations applied to these assets follow the slow/gentle pacing rule."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend is not required for this feature set; implement entirely in the React frontend.",
+    "Do not edit files under frontend immutablePaths (compose existing UI components instead).",
+    "All user-specified messages must be displayed exactly as provided (no copyediting).",
+    "Particle slideshow CSS must be fully scoped under #particleSlideshowSection and must not introduce global style overrides.",
+    "No coercive/violent/threatening content may be added."
+  ],
+  "nonGoals": [
+    "Internet Identity authentication or any user accounts.",
+    "Persisting state to the Motoko canister.",
+    "External frameworks beyond the provided React/TypeScript/Tailwind stack (do not attempt to deliver a raw single-file HTML-only solution in this project).",
+    "WebSockets/real-time features or third-party integrations.",
+    "Identifying or describing real people in the uploaded photo(s)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cute illustrated cartoon guy character begging with hearts, pastel palette, non-realistic (valentine-guy-begging.dim_512x512.png)",
+      "Cute illustrated cartoon guy character sad/crying, pastel palette, non-realistic (valentine-guy-sad.dim_512x512.png)",
+      "Cute illustrated crying cat character pleading/pushing, pastel palette, non-realistic (valentine-cat-pleading.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [
+      "Build an emotionally expressive, mobile-first Valentine proposal experience with gentle, premium animations and a canvas particle slideshow finale."
+    ],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Prefers slow, gentle, emotionally paced UI animations with pastel Valentine styling and hand-crafted feel."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
